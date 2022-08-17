@@ -1,26 +1,29 @@
 "use strict"
-const buttons = document.querySelectorAll('.btn');
+const numberBtns = document.querySelectorAll('.number');
 const displayScreen = document.querySelector('.display');
+const operations = document.querySelectorAll('.operation');
+const equalBtn = document.getElementById('btnEqual');
+const deleteBtn = document.getElementById('btnDelete');
+const clearAllBtn = document.getElementById('btnClearAll');
 const displayValue = [];
 let num1 = 0;
 let num2 = 0;
+let operation = [];
 
 
 // Basic arithmatic functions
 
 const add = (x,y) => x + y;
-
 const subtract = (x,y) => x - y;
-
 const multiply = (x,y) => x * y;
-
 const divide = (x,y) => x / y;
-
 
 // Operator function
 
 const operate = (x, func, y) => {
-
+    x = num1;
+    y = num2;
+    func = operation;
     if (func === add) {
         displayScreen.innerText = displayValue;
         return  displayValue.push(add(x, y));
@@ -46,5 +49,14 @@ const returnValue = (e) => {
     displayScreen.innerText = displayValue.join('');
 };
 
-buttons.forEach(button => button.addEventListener('click', returnValue));
+numberBtns.forEach(num => num.addEventListener('click', returnValue));
+
+
+// ===========
+
+operations.forEach(op => op.addEventListener('click', (e)=> {
+  //console.log(e.target.value);
+  operation.push(e.target.value);
+}));
+
 
