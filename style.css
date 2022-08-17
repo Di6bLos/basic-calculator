@@ -1,3 +1,13 @@
+
+
+
+
+.calculator-body {
+    max-width: 380px;
+    background-color: gray;
+    padding: .5rem;
+}
+
 .buttons {
     display: grid;
     grid-template-areas: 
@@ -6,12 +16,15 @@
     "four five six sub"
     "one two three add"
     "deci zero zero equal";
-    max-width: 400px;
-    gap: .25em;
+    gap: .25rem;
 }
 
 .display {
-    
+  display: flex;
+  justify-content: flex-end;
+  background-color: rgb(246, 246, 246); 
+  margin-bottom: .5rem; 
+  padding: .25rem;
 }
 
 #btn1 {
