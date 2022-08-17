@@ -32,3 +32,12 @@ const operate = (x, func, y) => {
 
 };
 
+const displayScreen = document.querySelector('.display');
+const buttons = document.querySelectorAll('.btn');
+
+buttons.forEach(button => button.addEventListener('click', function(e) {
+
+    const value = e.target.value;
+    console.log(value);
+}));
+
