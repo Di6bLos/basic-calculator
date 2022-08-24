@@ -98,6 +98,13 @@ clearBtn.addEventListener('click', ()=> {
     display.innerText = 0;
 });
 deleteBtn.addEventListener('click', ()=> {
+    if (operation === '') {
+        num1 = num1.slice(0, -1);
+        display.innerText = num1;
+    } else {
+        num2 = num2.slice(0, -1);
+        display.innerText = num1 + operation + num2;
+    }
 
-    display.innerText = display.innerText.substring(0, display.innerText.length -1);
 });
+
