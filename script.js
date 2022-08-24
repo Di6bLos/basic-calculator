@@ -76,11 +76,13 @@ numberBtns.forEach((btn)=> btn.addEventListener('click', (e)=> {
 
 // Operations variable selected
 operateBtns.forEach(op => op.addEventListener('click', (e)=> {
+   // if (display.innerText == 0) {return};
+
     if (operation === '') {
         operation = e.target.innerText;
         display.innerText += e.target.innerText;
         haveDot = false;
-    } else if (operation != '') {
+    } else if (operation != '' && num2 != '') {
         operate();
         operation = e.target.innerText;
         display.innerText += e.target.innerText;
