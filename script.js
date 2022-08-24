@@ -83,3 +83,10 @@ operateBtns.forEach(op => op.addEventListener('click', (e)=> {
 }));
 
 equalBtn.addEventListener('click', operate);
+clearBtn.addEventListener('click', ()=> {
+    num1 = '';
+    num2 = '';
+    operation = '';
+    haveDot = false;
+    display.innerText = 0;
+});
