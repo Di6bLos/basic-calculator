@@ -34,7 +34,7 @@ const operate = (x, y, op) => {
         x = parseFloat(num1);
         y = parseFloat(num2);
         op = operation;
-
+        
         // Executes the correct math function
         if (op === '+') {
             display.innerText = add(x,y);
@@ -53,6 +53,7 @@ const operate = (x, y, op) => {
         return;
     }
 }; 
+
 
 // Numbers added to screen and variables to be calculated
 numberBtns.forEach((btn)=> btn.addEventListener('click', (e)=> {
@@ -81,14 +82,22 @@ operateBtns.forEach(op => op.addEventListener('click', (e)=> {
         haveDot = false;
     } else if (operation != '') {
         operate();
+        operation = e.target.innerText;
+        display.innerText += e.target.innerText;
+
     }
 }));
 
 equalBtn.addEventListener('click', operate);
+
 clearBtn.addEventListener('click', ()=> {
     num1 = '';
     num2 = '';
     operation = '';
     haveDot = false;
     display.innerText = 0;
+});
+deleteBtn.addEventListener('click', ()=> {
+
+    display.innerText = display.innerText.substring(0, display.innerText.length -1);
 });
