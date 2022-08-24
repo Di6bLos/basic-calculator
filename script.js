@@ -76,7 +76,6 @@ numberBtns.forEach((btn)=> btn.addEventListener('click', (e)=> {
 
 // Operations variable selected
 operateBtns.forEach(op => op.addEventListener('click', (e)=> {
-   // if (display.innerText == 0) {return};
 
     if (operation === '') {
         operation = e.target.innerText;
@@ -89,17 +88,23 @@ operateBtns.forEach(op => op.addEventListener('click', (e)=> {
 
     }
 }));
-
-equalBtn.addEventListener('click', operate);
-
-clearBtn.addEventListener('click', ()=> {
+// Reset the calculator and all the variables
+const clearAll = () => {
     num1 = '';
     num2 = '';
     operation = '';
     haveDot = false;
     display.innerText = 0;
-});
+};
+equalBtn.addEventListener('click', operate);
+
+clearBtn.addEventListener('click', clearAll);
+
 deleteBtn.addEventListener('click', ()=> {
+    if (display.innerText.length <= 0) {
+        clearAll();
+    };
+
     if (operation === '') {
         num1 = num1.slice(0, -1);
         display.innerText = num1;
