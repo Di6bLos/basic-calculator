@@ -19,6 +19,40 @@ const subtract = (x,y) => x - y;
 const multiply = (x,y) => x * y;
 const divide = (x,y) => x / y;
 
+// Operation function
+const operate = (x, y, op) => {
+    if (num1 != '' && num2 != '' && operation != '') {
+        x = parseFloat(num1);
+        y = parseFloat(num2);
+        op = operation;
+
+        // Executes the correct math function
+        if (op === '+') {
+            display.innerText = add(x,y);
+            num1 = display.innerText;
+            num2 = '';
+            operation = '';
+        } else if (op === '-') {
+            display.innerText = subtract(x,y);
+            num1 = display.innerText;
+            num2 = '';
+            operation = '';
+        } else if (op === 'x') {
+            display.innerText = multiply(x,y);
+            num1 = display.innerText;
+            num2 = '';
+            operation = '';
+        } else if (op === '/') {
+            display.innerText = divide(x,y);
+            num1 = display.innerText;
+            num2 = '';
+            operation = '';
+        } 
+    } else {
+        return;
+    }
+}; 
+
 // Numbers added to screen and variables to be calculated
 numberBtns.forEach((btn)=> btn.addEventListener('click', (e)=> {
     // Checks if a decimal is already used
@@ -47,3 +81,5 @@ operateBtns.forEach(op => op.addEventListener('click', (e)=> {
         operate();
     }
 }));
+
+equalBtn.addEventListener('click', operate);
