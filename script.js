@@ -103,6 +103,10 @@ deleteBtn.addEventListener('click', ()=> {
     if (operation === '') {
         num1 = num1.slice(0, -1);
         display.innerText = num1;
+    } else if (operation != '' && num2 === '') {
+        operation = '';
+        display.innerText = num1 + operation + num2;
+
     } else {
         num2 = num2.slice(0, -1);
         display.innerText = num1 + operation + num2;
