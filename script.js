@@ -19,6 +19,8 @@ const subtract = (x,y) => x - y;
 const multiply = (x,y) => x * y;
 const divide = (x,y) => x / y;
 
+// Makes the results of the operate function num1
+// and clears num2 and operation variable
 const nextOperation = () => {
     num1 = display.innerText;
     num2 = '';
@@ -76,6 +78,7 @@ operateBtns.forEach(op => op.addEventListener('click', (e)=> {
     if (operation === '') {
         operation = e.target.innerText;
         display.innerText += e.target.innerText;
+        haveDot = false;
     } else if (operation != '') {
         operate();
     }
