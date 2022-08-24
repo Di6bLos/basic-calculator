@@ -19,6 +19,13 @@ const subtract = (x,y) => x - y;
 const multiply = (x,y) => x * y;
 const divide = (x,y) => x / y;
 
+const nextOperation = () => {
+    num1 = display.innerText;
+    num2 = '';
+    operation = '';
+    haveDot = false;
+};
+
 // Operation function
 const operate = (x, y, op) => {
     if (num1 != '' && num2 != '' && operation != '') {
@@ -29,24 +36,16 @@ const operate = (x, y, op) => {
         // Executes the correct math function
         if (op === '+') {
             display.innerText = add(x,y);
-            num1 = display.innerText;
-            num2 = '';
-            operation = '';
+            nextOperation();
         } else if (op === '-') {
             display.innerText = subtract(x,y);
-            num1 = display.innerText;
-            num2 = '';
-            operation = '';
+            nextOperation();
         } else if (op === 'x') {
             display.innerText = multiply(x,y);
-            num1 = display.innerText;
-            num2 = '';
-            operation = '';
+            nextOperation();
         } else if (op === '/') {
             display.innerText = divide(x,y);
-            num1 = display.innerText;
-            num2 = '';
-            operation = '';
+            nextOperation();
         } 
     } else {
         return;
