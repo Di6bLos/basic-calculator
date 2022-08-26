@@ -96,26 +96,27 @@ const clearAll = () => {
     haveDot = false;
     display.innerText = 0;
 };
+// equal button calls the operate function
 equalBtn.addEventListener('click', operate);
-
+// CLEAR button calls the clearAll funtion 
 clearBtn.addEventListener('click', clearAll);
-
+// delete button removes the last character in the display
 deleteBtn.addEventListener('click', ()=> {
-    if (display.innerText.length <= 0) {
-        clearAll();
-    };
-
-    if (operation === '') {
+    
+    if (display.innerText.length <= 1) {
+         clearAll();
+     }
+    else if (operation === '') {
         num1 = num1.slice(0, -1);
         display.innerText = num1;
     } else if (operation != '' && num2 === '') {
         operation = '';
         display.innerText = num1 + operation + num2;
-
-    } else {
+         }  
+  else {
         num2 = num2.slice(0, -1);
         display.innerText = num1 + operation + num2;
-    }
+    };
 
 });
 
